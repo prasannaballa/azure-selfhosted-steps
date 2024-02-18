@@ -1,0 +1,44 @@
+# follow url
+https://www.coachdevops.com/2023/01/how-to-setup-self-hosted-linux-agent-in.html 
+
+
+How to configure Self-hosted build agent?
+
+1. Go to Azure DevOps dashboard - https://dev.azure.com/
+2. Select your project dashboard
+3. Go to your project settings
+Step #1 - Create the Agent
+mkdir myagent && cd myagent
+
+Step #2 - Download the agent
+wget https://vstsagentpackage.azureedge.net/agent/2.214.1/vsts-agent-linux-x64-2.214.1.tar.gz # replace your url azuredecops linux machine
+Step #3 - Configure the Agent
+tar zxvf vsts-agent-linux-x64-2.214.1.tar.gz
+ls -al
+./config.sh
+Step #5:
+Enter server URL >
+https://dev.azure.com/yourorganization
+
+Step #6:
+Enter authentication type (press enter for PAT) > PAT
+
+Step #7:
+Enter personal access token, generated from this step
+
+Step #8:
+Enter Agent pool
+Give some name
+
+Step #9:
+Enter Agent name --> myBuildAgent_1
+
+Step #10:
+Enter work folder > enter
+
+sudo ./svc.sh install &
+
+sudo apt install docker.io
+sudo usermod -aG azureuser
+sudo systemctl restart docker
+sudo chmod 666 /var/run/docker.sock
