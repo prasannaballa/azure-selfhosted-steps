@@ -39,6 +39,6 @@ Enter work folder > enter
 sudo ./svc.sh install &
 
 sudo apt install docker.io
-sudo usermod -aG azureuser
+sudo usermod -aG docker azureuser
 sudo systemctl restart docker
 sudo chmod 666 /var/run/docker.sock
