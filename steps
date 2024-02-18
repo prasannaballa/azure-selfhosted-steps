@@ -37,6 +37,8 @@ Step #10:
 Enter work folder > enter
 
 sudo ./svc.sh install &
+./runsvc.sh &
+
 
 sudo apt install docker.io
 sudo usermod -aG docker azureuser
