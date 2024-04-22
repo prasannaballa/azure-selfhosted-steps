@@ -44,3 +44,23 @@ sudo apt install docker.io
 sudo usermod -aG docker azureuser
 sudo systemctl restart docker
 sudo chmod 666 /var/run/docker.sock
+
+
+#!/bin/bash
+
+# Install unzip (if not already installed)
+sudo apt-get update
+sudo apt-get install -y unzip
+
+# Download Terraform
+sudo wget https://releases.hashicorp.com/terraform/1.2.3/terraform_1.2.3_linux_amd64.zip
+
+# Unzip Terraform and move it to /usr/local/bin
+sudo unzip terraform_1.2.3_linux_amd64.zip -d /usr/local/bin
+
+# Remove the downloaded zip file
+sudo rm terraform_1.2.3_linux_amd64.zip
+
+# Verify Terraform installation
+terraform --version
+
